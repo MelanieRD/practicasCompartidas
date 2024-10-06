@@ -60,17 +60,42 @@ Podemos ver como se utiliza el array spread, le estamos diciendo que tome el res
 // console.log(one);
 // console.log(two);
 // console.log(rest);
-/**-------------------------------------------------------------------------- FIBONACCI CON RECURSION ------------------------------------------------------ */
+/**-------------------------------------------------------------------------- FIBONACCI CON RECURSION SIN VER LA DOCUMENTACION------------------------------------------------------ */
 
 let count = 0;
+let numPrev = 0;
+let numPrev1 = 1;
+let current = 0;
+
+// console.log(numPrev);
+// console.log(numPrev1);
+
 function FibonacciRECURSION(): void {
-  count++;
+  count += 1;
+
   if (count < 19) {
+    current = numPrev + numPrev1;
+    console.log(current);
+    numPrev = numPrev1;
+    numPrev1 = current;
     FibonacciRECURSION();
   }
 }
 
-FibonacciRECURSION();
+// FibonacciRECURSION();
+/**-------------------------------------------------------------------------- FIBONACCI FIND NTH NUMBER CON RECURSION VIENDO LA DOCUMENTACIÓN ------------------------------------------------------ */
+
+//finding The nth Fibbonacci Number using Recursion
+// ESTE CODIGO ES LENTO PORQUE LLAMA DOS VECES LA FUNCION, LO QUE LA HACE HACER MUCHOS CALCULOS, LO QUE EMPEORA SI EL VALOR PASADO COMO ARGUMENTO ES UN NUMERO GRANDE.
+function FConDoc(n: number): any {
+  if (n <= 1) {
+    return n;
+  } else {
+    return FConDoc(n - 1) + FConDoc(n - 2);
+  }
+}
+
+// console.log(FConDoc(4));
 
 /**--------------------------------------- COMANDOS QUE SIEMPRE UTILIZO Y A VECES OLVIDO JHAJAJAJAJAJA ------------------------------------------------------*/
 //npx tsc -> genera archivo js de archivo ts
